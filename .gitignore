@@ -15,6 +15,7 @@
 *.dep
 *.bin
 *.lst
+*.zip
 
 # MPLAB X / NetBeans project generated files
 **/nbproject/private/
