@@ -1,0 +1,50 @@
+# .gitignore for MPLAB X (MPLAB X IDE v6.25) projects
+
+# Build outputs
+/dist/
+/build/
+**/dist/
+**/build/
+
+# Compiler/linker artifacts
+*.hex
+*.elf
+*.map
+*.o
+*.d
+*.dep
+*.bin
+*.lst
+
+# MPLAB X / NetBeans project generated files
+nbproject/private/
+**/.generated_files/
+**/.generated_files/**
+
+# Autosave / backups
+*.autosave
+*.save
+*~
+*.swp
+
+# IDE/editor
+.vscode/
+.idea/
+*.suo
+*.user
+*.userprefs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# MCC / MPLAB local customizations to ignore
+**/nbproject/Makefile-local-*.mk
+**/mcc-manifest-autosave.yml
+
+# Keep project configuration files (these should be committed):
+# - nbproject/project.xml
+# - nbproject/configurations.xml
+# - nbproject/Makefile-*.mk (except local overrides above)
+# - nbproject/Makefile-genesis.properties
