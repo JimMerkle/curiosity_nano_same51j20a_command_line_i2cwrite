@@ -51,7 +51,7 @@ SERCOM5 RX - PAD1 - PB17 (pin 40)
 ![Pins](SERCOM5_Pins.jpg)
 
 ### System Diagram
-![System Diagram](System_Diagram.jpg)
+![System Diagram](System_diagram.jpg)
 
 ### Peripherals
 ```
@@ -82,7 +82,7 @@ SERCOM5 - USART mode for USB CDC virtual serial port
 |   +-- README.md                            | This file
 |   +-- .gitignore                           | Git ignore patterns for MPLAB X 6.25
 |   +-- CuriosityNanoBoard.jpg               | Curiosity Nano board image
-|   +-- System_Diagram.jpg                   | MCC Project Graph - system diagram
+|   +-- System_diagram.jpg                   | MCC Project Graph - system diagram
 |   +-- SERCOM5_Configuration.jpg            | SERCOM5 configuration screenshot
 |   +-- SERCOM5_Pins.jpg                     | SERCOM5 pinout screenshot
 ```
