@@ -50,6 +50,12 @@ SERCOM5 RX - PAD1 - PB17 (pin 40)
 ![Configuration](SERCOM5_Configuration.jpg)
 ![Pins](SERCOM5_Pins.jpg)
 
+### SERCOM3 - I2C Master Interface
+```
+SERCOM3 SDA - PAD0 - PA22 (pin 43)
+SERCOM3 SCL - PAD1 - PA23 (pin 44)
+```
+
 ### System Diagram
 ![System Diagram](System_diagram.jpg)
 
@@ -57,7 +63,7 @@ SERCOM5 RX - PAD1 - PB17 (pin 40)
 ```
 TC0 - 32-bit counter, incrementing every 1us - Optional, supports microsecond timing
 SERCOM5 - USART mode for USB CDC virtual serial port
-(I2C configuration to be added via MCC)
+SERCOM3 - I2C master mode for communicating with I2C slave devices
 ```
 
 ### Directory Structure

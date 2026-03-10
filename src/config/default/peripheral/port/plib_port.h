@@ -74,6 +74,14 @@
 #define LED_AL_PA14_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 14U)) & 0x01U)
 #define LED_AL_PA14_PIN                  PORT_PIN_PA14
 
+/*** Macros for I2C_SDA pin ***/
+#define I2C_SDA_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 22U)) & 0x01U)
+#define I2C_SDA_PIN                  PORT_PIN_PA22
+
+/*** Macros for I2C_SCL pin ***/
+#define I2C_SCL_Get()               (((PORT_REGS->GROUP[0].PORT_IN >> 23U)) & 0x01U)
+#define I2C_SCL_PIN                  PORT_PIN_PA23
+
 // *****************************************************************************
 /* PORT Group
 

@@ -196,9 +196,9 @@ int cl_cls(void) {
 }
 
 int cl_add(void) {
-    // verify argument count, to remove it from the table
+    // verify argument count
     if(argc < 3) {
-        log_msg("\r\nInvalid Arg cnt: %d Expected: %d\n", argc - 1, 2);
+        log_msg("\r\nInvalid argc: %d Expected: %d\n", argc, 3);
         return 0;
     }
     log_msg("add..  A: %s  B: %s\n", argv[1], argv[2]);
@@ -275,6 +275,27 @@ int cl_version(void)
 	return 0;
 }
 
+#define I2C_SLAVE_ADDRESS 0x12
+
+int cl_i2cwrite(void) {
+    // verify argument count
+    if(argc < 2) {
+        log_msg("\r\nInvalid argc: %d Expected: %d\n", argc, 2);
+        return 0;
+    }
+    uint32_t length = strlen(argv[1]);    
+    bool rc = 0;
+    if(length>0) {
+      log_msg("Sending I2C: \"%s\", length: %u\n", argv[1],length);
+      rc = SERCOM3_I2C_Write(I2C_SLAVE_ADDRESS<<1, argv[1],length);
+    } else {
+       log_msg("Invalid length: %u:\n",length);
+    }
+
+    log_msg("%s\n\n", rc?"success":"fail");
+    return rc;
+}
+
 void text_in_box(const char *text, const char *color)
 {
     if (!text) {
@@ -338,6 +359,7 @@ void text_in_box(const char *text, const char *color)
     log_msg("+");
     for (size_t i = 0; i < max_len + 2; i++)
         log_msg("-");
-    log_msg("+\n");
+    log_msg("+");
     if(color)log_msg(COLOR_RESET);
+    log_msg("\n");
 }

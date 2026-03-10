@@ -17,7 +17,7 @@
 *.lst
 
 # MPLAB X / NetBeans project generated files
-nbproject/private/
+**/nbproject/private/
 **/.generated_files/
 **/.generated_files/**
 

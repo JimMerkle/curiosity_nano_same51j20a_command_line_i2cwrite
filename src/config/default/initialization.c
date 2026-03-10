@@ -139,6 +139,8 @@ void SYS_Initialize ( void* data )
 
 
 
+    SERCOM3_I2C_Initialize();
+
     EVSYS_Initialize();
 
 	 SYSTICK_TimerInitialize();

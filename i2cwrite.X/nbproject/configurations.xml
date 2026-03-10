@@ -5,9 +5,7 @@
                    displayName="Header Files"
                    projectFiles="true">
       <logicalFolder name="config" displayName="config" projectFiles="true">
-        <logicalFolder name="i2cwrite_default"
-                       displayName="i2cwrite_default"
-                       projectFiles="true">
+        <logicalFolder name="default" displayName="default" projectFiles="true">
           <logicalFolder name="peripheral" displayName="peripheral" projectFiles="true">
             <logicalFolder name="clock" displayName="clock" projectFiles="true">
               <itemPath>../src/config/default/peripheral/clock/plib_clock.h</itemPath>
@@ -28,6 +26,10 @@
               <itemPath>../src/config/default/peripheral/port/plib_port.h</itemPath>
             </logicalFolder>
             <logicalFolder name="sercom" displayName="sercom" projectFiles="true">
+              <logicalFolder name="i2c_master" displayName="i2c_master" projectFiles="true">
+                <itemPath>../src/config/default/peripheral/sercom/i2c_master/plib_sercom_i2c_master_common.h</itemPath>
+                <itemPath>../src/config/default/peripheral/sercom/i2c_master/plib_sercom3_i2c_master.h</itemPath>
+              </logicalFolder>
               <logicalFolder name="usart" displayName="usart" projectFiles="true">
                 <itemPath>../src/config/default/peripheral/sercom/usart/plib_sercom5_usart.h</itemPath>
                 <itemPath>../src/config/default/peripheral/sercom/usart/plib_sercom_usart_common.h</itemPath>
@@ -186,13 +188,14 @@
                      displayName="i2cwrite_default"
                      projectFiles="true">
         <logicalFolder name="components" displayName="components" projectFiles="true">
-          <itemPath>i2cwrite_default/components/evsys.yml</itemPath>
-          <itemPath>i2cwrite_default/components/dfp.yml</itemPath>
-          <itemPath>i2cwrite_default/components/tc0.yml</itemPath>
           <itemPath>i2cwrite_default/components/sercom5.yml</itemPath>
+          <itemPath>i2cwrite_default/components/tc0.yml</itemPath>
           <itemPath>i2cwrite_default/components/cmsis.yml</itemPath>
-          <itemPath>i2cwrite_default/components/nvmctrl.yml</itemPath>
           <itemPath>i2cwrite_default/components/core.yml</itemPath>
+          <itemPath>i2cwrite_default/components/dfp.yml</itemPath>
+          <itemPath>i2cwrite_default/components/nvmctrl.yml</itemPath>
+          <itemPath>i2cwrite_default/components/evsys.yml</itemPath>
+          <itemPath>i2cwrite_default/components/sercom3.yml</itemPath>
         </logicalFolder>
         <itemPath>i2cwrite_default/mcc-config.mc4</itemPath>
       </logicalFolder>
@@ -237,6 +240,9 @@
               <itemPath>../src/config/default/peripheral/port/plib_port.c</itemPath>
             </logicalFolder>
             <logicalFolder name="sercom" displayName="sercom" projectFiles="true">
+              <logicalFolder name="i2c_master" displayName="i2c_master" projectFiles="true">
+                <itemPath>../src/config/default/peripheral/sercom/i2c_master/plib_sercom3_i2c_master.c</itemPath>
+              </logicalFolder>
               <logicalFolder name="usart" displayName="usart" projectFiles="true">
                 <itemPath>../src/config/default/peripheral/sercom/usart/plib_sercom5_usart.c</itemPath>
               </logicalFolder>
