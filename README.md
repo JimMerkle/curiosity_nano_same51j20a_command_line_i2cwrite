@@ -135,5 +135,6 @@ https://www.youtube.com/watch?v=wZlUVmyrH54
 
 ### Version History
 ```
+00.00.02 - Add I2C peripheral (SERCOM3 I2C master mode)
 00.00.01 - Initial commit - i2cwrite project created from command_line template
 ```

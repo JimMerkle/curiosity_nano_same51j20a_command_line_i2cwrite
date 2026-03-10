@@ -42,6 +42,7 @@ Thumbs.db
 # MCC / MPLAB local customizations to ignore
 **/nbproject/Makefile-local-*.mk
 **/mcc-manifest-autosave.yml
+**/mcc-manifest-generated-success.yml
 
 # Keep project configuration files (these should be committed):
 # - nbproject/project.xml
