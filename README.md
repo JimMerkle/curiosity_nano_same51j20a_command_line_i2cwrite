@@ -1,6 +1,8 @@
 # i2cwrite - SAM E51 I2C Write Project
 
-Based on the command_line project for SAM E51 Curiosity Nano.
+Demonstrates I2C write operations on the SAM E51 Curiosity Nano development board.
+
+Based on the command_line project template, this project adds I2C peripheral configuration and demonstrates I2C master write functionality for communicating with I2C slave devices.
 
 ## Development Board
 SAM E51 CURIOSITY NANO
@@ -56,31 +58,46 @@ TC0 - 32-bit counter, incrementing every 1us  - Optional, supports microsecond t
 
 ### Directory Structure
 ```
- The build environment for Printf consists of the command_line repository cloned into a
- folder structure as follows:
-    
-+-- command_line
-|   +-- command_line.X                        | mplab X project directory
-|   +-- src                                   | source directory
-|       +-- main.c                            | application
-|       +-- config                            | mcc generated configuration
-|       +-- packs                             | processor CMSIS and peripheral
-|       +-- logger.c                          | implements printf() functionality, writing to SERCOM TX FIFO
-|       +-- logger.h                          | int log_msg(const char *fmt, ...);
-|       +-- command_line.c                    | implements the interactive Command Line functionality
-|       +-- command_line.h                    | function prototypes
-|       +-- version.h                         | version string definition
-|   +-- README.md                             | This Readme.md file
-|   +-- CuriosityNanoBoard.jpg                | Curiosity Nano picture
-|   +-- System_Diagram.jpg                    | MHC "Project Graph" - system diagram
-|   +-- SERCOM5_Configuration.jpg             | SERCOM5 configuration screenshot from MHC
-|   +-- SERCOM5_Pins.jpg                      | SERCOM5 pinout screenshot from MHC
++-- curiosity_nano_same51j20a_command_line_i2cwrite
+|   +-- i2cwrite.X                           | MPLAB X project directory
+|   |   +-- i2cwrite_default                 | MCC Harmony configuration
+|   |   |   +-- components                   | MCC component configurations
+|   |   |   +-- mcc-config.mc4               | MCC project descriptor
+|   |   +-- nbproject                        | MPLAB X project files
+|   |       +-- configurations.xml           | Build configurations
+|   |       +-- project.xml                  | Project definition
+|   |       +-- Makefile-*.mk                | Build system makefiles
+|   +-- src                                  | Source directory
+|       +-- main.c                           | Application entry point
+|       +-- config/default                   | MCC generated configuration
+|       +-- logger.c                         | Implements printf() functionality via SERCOM5 TX
+|       +-- logger.h                         | int log_msg(const char *fmt, ...);
+|       +-- command_line.c                   | Interactive command line functionality
+|       +-- command_line.h                   | Function prototypes
+|       +-- version.h                        | Version string definition
+|   +-- README.md                            | This file
+|   +-- .gitignore                           | Git ignore patterns for MPLAB X 6.25
+|   +-- CuriosityNanoBoard.jpg               | Curiosity Nano board image
+|   +-- System_Diagram.jpg                   | MCC Project Graph - system diagram
+|   +-- SERCOM5_Configuration.jpg            | SERCOM5 configuration screenshot
+|   +-- SERCOM5_Pins.jpg                     | SERCOM5 pinout screenshot
 ```
 
 ### What is this repository for?
 ```
-SAM E5x/D5x (curiosity nano development board)
-Demonstrate creating a Command Line project
+SAM E51 Curiosity Nano Development Board (ATSAME51J20A)
+
+This project demonstrates:
+- I2C master mode write operations
+- Interactive command line interface via USB CDC/Serial
+- MCC Harmony 3 peripheral configuration
+- Microsecond timing using TC0 32-bit timer
+- Console logger functionality
+
+Primary Use Case:
+- I2C master communication with slave devices
+- Command-driven I2C write operations
+- Development template for I2C-based applications
 ```
    
 ### Help - Getting Started
@@ -96,7 +113,17 @@ https://www.youtube.com/watch?v=wZlUVmyrH54
 
 ```
 
+### Project Features
+```
+- I2C Master Mode (SERCOM peripheral configured for I2C)
+- Interactive Command Line Interface
+- USB CDC Virtual COM Port (SERCOM5 USART)
+- Microsecond Timer (TC0 32-bit counter)
+- Printf-style logging via SERCOM5
+- MCC Harmony 3 code generation
+```
+
 ### Version History
 ```
-00.05.11 - Add "cls" command to clear terminal screen. Add text_in_box() function.
+00.00.01 - Initial commit - i2cwrite project created from command_line template
 ```
