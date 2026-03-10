@@ -52,8 +52,12 @@ SERCOM5 RX - PAD1 - PB17 (pin 40)
 
 ### System Diagram
 ![System Diagram](System_Diagram.jpg)
+
+### Peripherals
 ```
-TC0 - 32-bit counter, incrementing every 1us  - Optional, supports microsecond timing
+TC0 - 32-bit counter, incrementing every 1us - Optional, supports microsecond timing
+SERCOM5 - USART mode for USB CDC virtual serial port
+(I2C configuration to be added via MCC)
 ```
 
 ### Directory Structure
