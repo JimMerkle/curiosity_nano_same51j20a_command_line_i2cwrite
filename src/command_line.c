@@ -323,12 +323,14 @@ void text_in_box(const char *text, const char *color)
     }
 
     // Print top border
+    log_msg("\n"); // line-feed BEFORE color sequence
     if(color)log_msg("%s",color);
-    log_msg("\n+");
+    log_msg("+");
     for (size_t i = 0; i < max_len + 2; i++)
         log_msg("-");
-    log_msg("+\n");
-    if(color)log_msg(COLOR_RESET);
+    log_msg("+");
+    if(color)log_msg(COLOR_RESET); // reset color BEFORE line-feed
+    log_msg("\n");
 
     // Second pass: print each line padded
     p = text;
@@ -344,8 +346,9 @@ void text_in_box(const char *text, const char *color)
             for (size_t i = len; i < max_len; i++)
                 log_msg(" ");
 
-            log_msg(" |\n");
-            if(color)log_msg(COLOR_RESET);
+            log_msg(" |");
+            if(color)log_msg(COLOR_RESET); // reset color BEFORE line-feed
+            log_msg("\n");
             if (*p == 0)
                 break;
 
@@ -360,6 +363,6 @@ void text_in_box(const char *text, const char *color)
     for (size_t i = 0; i < max_len + 2; i++)
         log_msg("-");
     log_msg("+");  // lower right corner
-    if(color)log_msg(COLOR_RESET); // reset color BEFORE final line-feed
+    if(color)log_msg(COLOR_RESET); // reset color BEFORE line-feed
     log_msg("\n");
 }
